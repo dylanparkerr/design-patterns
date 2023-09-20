@@ -22,6 +22,6 @@ type Dice struct{
 func main(){
     myDice := Dice{rollStrat: FairRollStrategy}
     myDice2 := Dice{rollStrat: RiggedRollStrategy}
-    fmt.Println(myDice.rollStrat())
-    fmt.Println(myDice2.rollStrat())
+    fmt.Println("dice 1 rolled a: " + myDice.rollStrat())
+    fmt.Println("dice 2 rolled a: " + myDice2.rollStrat())
 }
