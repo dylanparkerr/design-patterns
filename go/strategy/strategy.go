@@ -45,8 +45,20 @@ func (context *Context) ExecuteSort(arr []int) []int {
 }
 
 // ============================================================================
-// choose the sorting strategy
 func main() {
-	arr := []int{4, 3, 2, 1}
+	// **********
+	// this doesnt make sense if the array does not belong to the context
+	// otherwise we could just pass the data structure into the function
+	// like a normal procedural paradigm
+	arr := []int{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}
+
+	// choose the sorting strategy
+	bubbleSort := &BubbleSort{}
+	// insertionSort := &InsertionSort{}
+
+	context := &Context{}
+	context.SetSorter(bubbleSort)
+	context.ExecuteSort(arr)
+
 	fmt.Println(arr)
 }
